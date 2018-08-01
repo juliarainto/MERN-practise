@@ -1,3 +1,5 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from 'react';
 import gql from 'graphql-tag';
 import { graphql, compose } from 'react-apollo';
@@ -112,28 +114,28 @@ createTodo = async text => {
       <div style={{ display: 'flex' }}>
         <div style={{ margin: 'auto', width: 400 }}>
           <Paper elevation={1}>
-          <Form submit={this.createTodo} />
+            <Form submit={this.createTodo} />
             <List>
               {todos.map(todo => (
                 <ListItem
-                key={todo.id}
-                role={undefined}
-                dense
-                button
-                onClick={() =>this.updateTodo(todo)}
+                  key={todo.id}
+                  role={undefined}
+                  dense
+                  button
+                  onClick={() =>this.updateTodo(todo)}
                 >
-                <Checkbox
-                  checked={todo.complete}
-                  tabIndex={-1}
-                  disableRipple
-                />
-                <ListItemText primary={todo.text} />
-                <ListItemSecondaryAction>
-                  <IconButton onClick={() => this.removeTodo(todo)}>
-                    <CloseIcon />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
+                  <Checkbox
+                    checked={todo.complete}
+                    tabIndex={-1}
+                    disableRipple
+                  />
+                  <ListItemText primary={todo.text} />
+                  <ListItemSecondaryAction>
+                    <IconButton onClick={() => this.removeTodo(todo)}>
+                      <CloseIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
               ))}
             </List>
           </Paper>
