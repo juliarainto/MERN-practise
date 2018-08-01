@@ -1,11 +1,11 @@
-const { GraphQLServer } = require('graphql-yoga');
-const mongoose = require('mongoose');
+const { GraphQLServer } = require("graphql-yoga");
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect("mongodb://localhost:27017/test");
 
-const Todo = mongoose.model('Todo', {
+const Todo = mongoose.model("Todo", {
   text: String,
-  complete: Boolean,
+  complete: Boolean
 });
 
 const typeDefs = `
@@ -27,8 +27,8 @@ const typeDefs = `
 
 const resolvers = {
   Query: {
-    hello: (_, { name }) => `Hello ${name || 'World'}`,
-    todos: () => Todo.find(),
+    hello: (_, { name }) => `Hello ${name || "World"}`,
+    todos: () => Todo.find()
   },
   Mutation: {
     createTodo: async (_, { text }) => {
@@ -43,13 +43,13 @@ const resolvers = {
     removeTodo: async (_, { id }) => {
       await Todo.findByIdAndRemove(id);
       return true;
-    },
-  },
+    }
+  }
 };
 const server = new GraphQLServer({
   typeDefs,
-  resolvers,
+  resolvers
 });
-mongoose.connection.once('open', () => {
-  server.start(() => console.log('Server is running on localhost:4000'));
+mongoose.connection.once("open", () => {
+  server.start(() => console.log("Server is running on localhost:4000"));
 });

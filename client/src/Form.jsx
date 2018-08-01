@@ -21,14 +21,30 @@ export default class Form extends React.Component {
     console.log(e);
     if (e.key === "Enter") {
       this.props.submit(this.state.text);
-      this.setState({ text: ""});
+      this.setState({
+        text: ""
+      });
     }
   };
 
-  render () {
-    const { text } = this.state;
-    return (
-      <TextField onChange={this.handleChange} onKeyDown={this.handleKeyDown} label="todo..." margin="normal" value={text} fullWidth />
+  render() {
+    const {
+      text
+    } = this.state;
+    return ( <TextField
+      onChange={
+        this.handleChange
+      }
+      onKeyDown={
+        this.handleKeyDown
+      }
+      label="todo..."
+      margin="normal"
+      value={
+        text
+      }
+      fullWidth
+    />
     );
   }
 }
