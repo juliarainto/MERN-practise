@@ -12,10 +12,6 @@ MongoDB Compass is a good way to explore and manipulate your MongoDB data and se
 
 ## START APPLICATION
 
-Start
-```
-npm install
-```
 Client
 ```
 cd .\client
