@@ -8,7 +8,7 @@ Created using: ReactJS, NodeJS, Express, MongoDB, GraphQL and Apollo
 
 Installing MongoDB is required.
 
-MongoDB Compass is a good way to explore and manipulate your MongoDB data and set up your Database.
+MongoDB Compass is a good way to explore and manipulate your MongoDB data and set up your database.
 
 ## START APPLICATION
 
