@@ -27,7 +27,7 @@ Server
 cd .\server
 npm install
 node index.js
-open browser to: http://localhost:4000
+navigate browser to GraphQL if wanted: http://localhost:4000
 ```
 Build:
 ```
